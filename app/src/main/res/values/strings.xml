@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Kotlin Collection</string>
+    <string name="find_my_age">Find My Age</string>
+    <string name="tic_tac_toe">Tic-Tac-Toe</string>
 </resources>
