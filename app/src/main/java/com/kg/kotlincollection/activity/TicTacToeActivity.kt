@@ -15,7 +15,10 @@ class TicTacToeActivity : AppCompatActivity() {
     private var player1Moves = mutableListOf<Int>()
     private var player2Moves = mutableListOf<Int>()
     private var bothPlayerMoves = mutableListOf<Int>()
-    private val isAutoPlayEnabled = true
+    private val isAutoPlayEnabled = false
+    private var player1WinsCount = 0
+    private var player2WinsCount = 0
+    private var isGameOver = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,6 +74,7 @@ class TicTacToeActivity : AppCompatActivity() {
         }
 
         if(emptyCells.size == 0) {
+            restartGame()
             return
         }
 
@@ -125,14 +129,49 @@ class TicTacToeActivity : AppCompatActivity() {
         }
 
         if(winner == 1) {
+            player1WinsCount++
             Toast.makeText(this, "Player1 wins!", Toast.LENGTH_SHORT).show()
+            isGameOver = true
         } else if(winner == 2) {
+            player2WinsCount++
             Toast.makeText(this, "Player2 wins!", Toast.LENGTH_SHORT).show()
+            isGameOver = true
         }
 
         if(winner == -1 && isAllSquaresFilled()) {
+            isGameOver = true
             Toast.makeText(this, "It's a Draw!", Toast.LENGTH_SHORT).show()
         }
+
+        if(isGameOver) restartGame()
+    }
+
+    private fun restartGame() {
+
+        activePlayer = 1
+        player1Moves.clear()
+        player2Moves.clear()
+        isGameOver = false
+
+        for (cellId in 1..9) {
+            val buttonSelected: Button = when(cellId) {
+                1 -> bu1
+                2 -> bu2
+                3 -> bu3
+                4 -> bu4
+                5 -> bu5
+                6 -> bu6
+                7 -> bu7
+                8 -> bu8
+                9 -> bu9
+                else -> bu1
+            }
+            buttonSelected.text = ""
+            buttonSelected.isEnabled = true
+            buttonSelected.setBackgroundResource(R.color.tictactoe_btn_color)
+        }
+
+        Toast.makeText(this, "Player1: $player1WinsCount    Player2: $player2WinsCount", Toast.LENGTH_SHORT).show()
     }
 
     private fun isAllSquaresFilled(): Boolean {
