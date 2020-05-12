@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.kg.kotlincollection.R
+import kotlinx.android.synthetic.main.activity_tic_tac_toe.*
+import java.util.*
 
 class TicTacToeActivity : AppCompatActivity() {
 
@@ -13,6 +15,7 @@ class TicTacToeActivity : AppCompatActivity() {
     private var player1Moves = mutableListOf<Int>()
     private var player2Moves = mutableListOf<Int>()
     private var bothPlayerMoves = mutableListOf<Int>()
+    private val isAutoPlayEnabled = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +48,9 @@ class TicTacToeActivity : AppCompatActivity() {
             player1Moves.add(cellId)
             buttonSelected.setBackgroundResource(R.color.tictactoe_btn_player1_color)
             activePlayer = 2
+            if(isAutoPlayEnabled) {
+                autoPlay()
+            }
         } else {
             buttonSelected.text = "O"
             player2Moves.add(cellId)
@@ -56,6 +62,38 @@ class TicTacToeActivity : AppCompatActivity() {
         checkWinner(player1Moves, player2Moves)
     }
 
+    private fun autoPlay() {
+        val emptyCells = mutableListOf<Int>()
+        for (cellId in 1..9) {
+            if( !(player1Moves.contains(cellId) || player2Moves.contains(cellId)) ) {
+                emptyCells.add(cellId)
+            }
+        }
+
+        if(emptyCells.size == 0) {
+            return
+        }
+
+        val random = Random()
+        val randomIndex = random.nextInt(emptyCells.size)
+        val randomCellId = emptyCells[randomIndex]
+
+        val randomButtonSelected = when(randomCellId) {
+            1 -> bu1
+            2 -> bu2
+            3 -> bu3
+            4 -> bu4
+            5 -> bu5
+            6 -> bu6
+            7 -> bu7
+            8 -> bu8
+            9 -> bu9
+            else -> bu1
+        }
+
+        playGame(randomCellId, randomButtonSelected)
+    }
+
     private fun checkWinner(
         player1Moves: MutableList<Int>,
         player2Moves: MutableList<Int>
@@ -64,11 +102,11 @@ class TicTacToeActivity : AppCompatActivity() {
 
         if(player1Moves.containsAll(listOf(1,2,3))
             || player1Moves.containsAll(listOf(4,5,6))
-            || player1Moves.containsAll(listOf(4,5,6))) {
+            || player1Moves.containsAll(listOf(7,8,9))) {
             winner = 1
         } else if (player2Moves.containsAll(listOf(1,2,3))
             || player2Moves.containsAll(listOf(4,5,6))
-            || player2Moves.containsAll(listOf(4,5,6))){
+            || player2Moves.containsAll(listOf(7,8,9))){
             winner = 2
         } else if(player1Moves.containsAll(listOf(1,4,7))
             || player1Moves.containsAll(listOf(2,5,8))
