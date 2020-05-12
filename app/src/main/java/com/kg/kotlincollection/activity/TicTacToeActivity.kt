@@ -12,6 +12,7 @@ class TicTacToeActivity : AppCompatActivity() {
     private var activePlayer: Int = 1
     private var player1Moves = mutableListOf<Int>()
     private var player2Moves = mutableListOf<Int>()
+    private var bothPlayerMoves = mutableListOf<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -100,6 +101,12 @@ class TicTacToeActivity : AppCompatActivity() {
 
     private fun isAllSquaresFilled(): Boolean {
         var isAllSquaresFilled = false
+        bothPlayerMoves.clear()
+        bothPlayerMoves.addAll(player1Moves)
+        bothPlayerMoves.addAll(player2Moves)
+        if(bothPlayerMoves.containsAll((1..9).toList())) {
+            isAllSquaresFilled = true
+        }
 
         return isAllSquaresFilled
     }
