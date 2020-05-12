@@ -30,6 +30,15 @@
             android:layout_marginBottom="@dimen/large_margin"
             android:text="@string/tic_tac_toe"
             android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_calculator"
+            style="@style/Widget.AppCompat.Button.Colored.WithBlackTextColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:text="@string/calculator"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
 

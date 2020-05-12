@@ -9,4 +9,13 @@
     <color name="tictactoe_btn_player1_color">@android:color/holo_blue_dark</color>
     <color name="tictactoe_btn_player2_color">@android:color/holo_green_dark</color>
 
+
+    <color name="calculator_text_area_background">#6b6b6d</color>
+    <color name="calculator_buttons_color">#d6d6d6</color>
+    <color name="calculator_operators_color">#f79231</color>
+    <color name="calculator_buttons_text_color">#313131</color>
+    <color name="calculator_operators_text_color">#ffffff</color>
+
+
+
 </resources>

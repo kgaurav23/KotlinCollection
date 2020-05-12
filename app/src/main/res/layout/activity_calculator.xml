@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.Calculator">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/calculator_text_area_background"
+        android:ems="10"
+        android:gravity="right"
+        android:inputType="textPersonName"
+        android:paddingTop="20pt"
+        android:text="0"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/very_small_padding">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/very_small_padding">
+
+            <Button
+                android:id="@+id/bu1"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="AC"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/bu2"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="+/-"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/bu3"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="%"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/bu4"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/calculator_operators_color"
+                android:text="/"
+                android:textColor="@color/calculator_operators_text_color"
+                android:textSize="22sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/very_small_padding">
+
+            <Button
+                android:id="@+id/bu5"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="7"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/bu6"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="8"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="9"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/calculator_operators_color"
+                android:text="*"
+                android:textColor="@color/calculator_operators_text_color"
+                android:textSize="22sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/very_small_padding">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="4"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="5"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="6"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/calculator_operators_color"
+                android:text="-"
+                android:textColor="@color/calculator_operators_text_color"
+                android:textSize="22sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/very_small_padding">
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="1"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="2"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:text="3"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/calculator_operators_color"
+                android:text="+"
+                android:textColor="@color/calculator_operators_text_color"
+                android:textSize="22sp" />
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/very_small_padding">
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="60pt"
+            android:layout_height="30pt"
+            android:layout_marginRight="@dimen/very_small_margin"
+            android:layout_weight="2"
+            android:background="@color/calculator_buttons_color"
+            android:text="0"
+            android:textColor="@color/calculator_buttons_text_color"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:layout_marginRight="@dimen/very_small_margin"
+            android:layout_weight="1"
+            android:background="@color/calculator_buttons_color"
+            android:text="."
+            android:textColor="@color/calculator_buttons_text_color"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="30pt"
+            android:layout_height="30pt"
+            android:layout_weight="1"
+            android:background="@color/calculator_operators_color"
+            android:text="="
+            android:textColor="@color/calculator_operators_text_color"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -10,6 +10,7 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var btnFindMyAge: Button
     private lateinit var btnTicTacToe: Button
+    private lateinit var btnCalculator: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +20,14 @@ class HomeActivity : AppCompatActivity() {
         //setup click listeners to open respective screens
         setupClickListenerForFindMyAge()
         setupClickListenerForTicTacToe()
+        setupClickListenerForCalculator()
+    }
+
+    private fun setupClickListenerForCalculator() {
+        btnCalculator.setOnClickListener {
+            val intent = Intent(this, Calculator::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupClickListenerForTicTacToe() {
@@ -38,5 +47,6 @@ class HomeActivity : AppCompatActivity() {
     private fun initViews() {
         btnFindMyAge = findViewById(R.id.btn_find_my_age)
         btnTicTacToe = findViewById(R.id.btn_tic_tac_toe)
+        btnCalculator = findViewById(R.id.btn_calculator)
     }
 }

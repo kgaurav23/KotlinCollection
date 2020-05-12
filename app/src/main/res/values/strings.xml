@@ -2,6 +2,7 @@
     <string name="app_name">Kotlin Collection</string>
     <string name="find_my_age">Find My Age</string>
     <string name="tic_tac_toe">Tic-Tac-Toe</string>
+    <string name="calculator">Calculator</string>
     <string name="get_my_age">Get my age</string>
     <string name="age_shows_here">Age shows here</string>
     <string name="enter_your_dob_hint">Enter your DOB year</string>
