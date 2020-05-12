@@ -84,8 +84,6 @@ class TicTacToeActivity : AppCompatActivity() {
         } else if(player2Moves.containsAll(listOf(1,5,9))
             || player2Moves.containsAll(listOf(3,5,7))) {
             winner = 2
-        } else {
-            // No one won
         }
 
         if(winner == 1) {
@@ -94,7 +92,7 @@ class TicTacToeActivity : AppCompatActivity() {
             Toast.makeText(this, "Player2 wins!", Toast.LENGTH_SHORT).show()
         }
 
-        if(isAllSquaresFilled() && winner == -1) {
+        if(winner == -1 && isAllSquaresFilled()) {
             Toast.makeText(this, "It's a Draw!", Toast.LENGTH_SHORT).show()
         }
     }

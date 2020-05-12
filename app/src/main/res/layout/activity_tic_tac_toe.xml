@@ -19,7 +19,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
 
         <Button
             android:id="@+id/bu2"
@@ -27,7 +28,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
 
         <Button
             android:id="@+id/bu3"
@@ -35,7 +37,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
     </TableRow>
 
     <TableRow
@@ -50,7 +53,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
 
         <Button
             android:id="@+id/bu5"
@@ -58,7 +62,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
 
         <Button
             android:id="@+id/bu6"
@@ -66,7 +71,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
     </TableRow>
 
     <TableRow
@@ -81,7 +87,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
 
         <Button
             android:id="@+id/bu8"
@@ -89,7 +96,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
 
         <Button
             android:id="@+id/bu9"
@@ -97,7 +105,8 @@
             android:layout_height="40pt"
             android:layout_marginStart="3pt"
             android:background="@color/tictactoe_btn_color"
-            android:onClick="buttonClick" />
+            android:onClick="buttonClick"
+            android:textSize="@dimen/tic_tac_toe_Btn_text_size" />
     </TableRow>
 
 </TableLayout>
