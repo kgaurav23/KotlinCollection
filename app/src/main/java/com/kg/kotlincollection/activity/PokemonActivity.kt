@@ -28,6 +28,9 @@ class PokemonActivity : AppCompatActivity(), OnMapReadyCallback {
     private var location: Location? = null
     private var pokemonList = mutableListOf<Pokemon>()
     private var oldLocation: Location? = null
+    val charmanderLocation = Pair(13.1000, 77.5413)
+    val bulbasaurLocation = Pair(12.7064, 77.7000)
+    val squirtleLocation = Pair(13.2019, 77.7582)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -163,10 +166,10 @@ class PokemonActivity : AppCompatActivity(), OnMapReadyCallback {
         //Mumbai location coordinates: (lat=18.9601, long=72.9382)
         pokemonList.add(
             Pokemon("Charmander", "Charmander living in Patna", R.drawable.charmander,
-            55.0, 13.1000, 77.5413))
+            55.0, charmanderLocation.first, charmanderLocation.second))
         pokemonList.add(Pokemon("Bulbasaur", "Bulbasaur living in Delhi", R.drawable.bulbasaur,
-            90.0, 12.7064, 77.7000))
+            90.0, bulbasaurLocation.first, bulbasaurLocation.second))
         pokemonList.add(Pokemon("Squirtle", "Squirtle living in Mumbai", R.drawable.squirtle,
-            33.5, 13.2019, 77.7582))
+            33.5, squirtleLocation.first, squirtleLocation.second))
     }
 }
