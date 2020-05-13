@@ -7,17 +7,16 @@
     tools:context=".activity.Calculator">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/etCalculationArea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/calculator_text_area_background"
-        android:ems="10"
         android:gravity="right"
         android:inputType="textPersonName"
-        android:paddingTop="20pt"
-        android:text="0"
+        android:paddingTop="10pt"
         android:textColor="#FFFFFF"
-        android:textSize="40sp" />
+        android:textSize="70sp"
+        tools:ignore="RtlHardcoded" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -30,45 +29,49 @@
             android:padding="@dimen/very_small_padding">
 
             <Button
-                android:id="@+id/bu1"
+                android:id="@+id/buac"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="AC"
+                android:onClick="buACEvent"
+                android:text="@string/cal_ac"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/bu2"
+                android:id="@+id/buplusminus"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="+/-"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_plusminus"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/bu3"
+                android:id="@+id/bupercent"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="%"
+                android:onClick="buPercent"
+                android:text="@string/cal_percent"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/bu4"
+                android:id="@+id/budiv"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
                 android:background="@color/calculator_operators_color"
-                android:text="/"
+                android:onClick="buOperatorEvent"
+                android:text="@string/cal_div"
                 android:textColor="@color/calculator_operators_text_color"
                 android:textSize="22sp" />
         </TableRow>
@@ -79,13 +82,79 @@
             android:padding="@dimen/very_small_padding">
 
             <Button
+                android:id="@+id/bu7"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginEnd="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_7"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/bu8"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginEnd="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_8"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/bu9"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginEnd="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_9"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/bumult"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_weight="1"
+                android:background="@color/calculator_operators_color"
+                android:onClick="buOperatorEvent"
+                android:text="@string/cal_mul"
+                android:textColor="@color/calculator_operators_text_color"
+                android:textSize="22sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/very_small_padding">
+
+            <Button
+                android:id="@+id/bu4"
+                android:layout_width="30pt"
+                android:layout_height="30pt"
+                android:layout_marginEnd="@dimen/very_small_margin"
+                android:layout_weight="1"
+                android:background="@color/calculator_buttons_color"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_4"
+                android:textColor="@color/calculator_buttons_text_color"
+                android:textSize="22sp" />
+
+            <Button
                 android:id="@+id/bu5"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="7"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_5"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
@@ -93,31 +162,22 @@
                 android:id="@+id/bu6"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="8"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_6"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/button5"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
-                android:layout_weight="1"
-                android:background="@color/calculator_buttons_color"
-                android:text="9"
-                android:textColor="@color/calculator_buttons_text_color"
-                android:textSize="22sp" />
-
-            <Button
-                android:id="@+id/button4"
+                android:id="@+id/buminus"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
                 android:background="@color/calculator_operators_color"
-                android:text="*"
+                android:onClick="buOperatorEvent"
+                android:text="@string/cal_minus"
                 android:textColor="@color/calculator_operators_text_color"
                 android:textSize="22sp" />
         </TableRow>
@@ -128,94 +188,49 @@
             android:padding="@dimen/very_small_padding">
 
             <Button
-                android:id="@+id/button7"
+                android:id="@+id/bu1"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="4"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_1"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/bu2"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="5"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_2"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/bu3"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
+                android:layout_marginEnd="@dimen/very_small_margin"
                 android:layout_weight="1"
                 android:background="@color/calculator_buttons_color"
-                android:text="6"
+                android:onClick="buNumberEvent"
+                android:text="@string/cal_3"
                 android:textColor="@color/calculator_buttons_text_color"
                 android:textSize="22sp" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buplus"
                 android:layout_width="30pt"
                 android:layout_height="30pt"
                 android:layout_weight="1"
                 android:background="@color/calculator_operators_color"
-                android:text="-"
-                android:textColor="@color/calculator_operators_text_color"
-                android:textSize="22sp" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="@dimen/very_small_padding">
-
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
-                android:layout_weight="1"
-                android:background="@color/calculator_buttons_color"
-                android:text="1"
-                android:textColor="@color/calculator_buttons_text_color"
-                android:textSize="22sp" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
-                android:layout_weight="1"
-                android:background="@color/calculator_buttons_color"
-                android:text="2"
-                android:textColor="@color/calculator_buttons_text_color"
-                android:textSize="22sp" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:layout_marginRight="@dimen/very_small_margin"
-                android:layout_weight="1"
-                android:background="@color/calculator_buttons_color"
-                android:text="3"
-                android:textColor="@color/calculator_buttons_text_color"
-                android:textSize="22sp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="30pt"
-                android:layout_height="30pt"
-                android:layout_weight="1"
-                android:background="@color/calculator_operators_color"
-                android:text="+"
+                android:onClick="buOperatorEvent"
+                android:text="@string/cal_plus"
                 android:textColor="@color/calculator_operators_text_color"
                 android:textSize="22sp" />
 
@@ -229,34 +244,37 @@
         android:padding="@dimen/very_small_padding">
 
         <Button
-            android:id="@+id/button10"
+            android:id="@+id/bu0"
             android:layout_width="60pt"
             android:layout_height="30pt"
-            android:layout_marginRight="@dimen/very_small_margin"
+            android:layout_marginEnd="@dimen/very_small_margin"
             android:layout_weight="2"
             android:background="@color/calculator_buttons_color"
-            android:text="0"
+            android:onClick="buNumberEvent"
+            android:text="@string/cal_0"
             android:textColor="@color/calculator_buttons_text_color"
             android:textSize="22sp" />
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/budot"
             android:layout_width="30pt"
             android:layout_height="30pt"
-            android:layout_marginRight="@dimen/very_small_margin"
+            android:layout_marginEnd="@dimen/very_small_margin"
             android:layout_weight="1"
             android:background="@color/calculator_buttons_color"
-            android:text="."
+            android:onClick="buNumberEvent"
+            android:text="@string/cal_dot"
             android:textColor="@color/calculator_buttons_text_color"
             android:textSize="22sp" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/buequals"
             android:layout_width="30pt"
             android:layout_height="30pt"
             android:layout_weight="1"
             android:background="@color/calculator_operators_color"
-            android:text="="
+            android:onClick="buEqualsEvent"
+            android:text="@string/cal_equals"
             android:textColor="@color/calculator_operators_text_color"
             android:textSize="22sp" />
     </LinearLayout>

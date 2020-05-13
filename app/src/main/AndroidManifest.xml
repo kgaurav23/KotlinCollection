@@ -9,13 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Calculator"></activity>
-        <activity android:name=".activity.TicTacToeActivity" />
-        <activity android:name=".activity.FindMyAgeActivity" />
+
+        <activity
+            android:name=".activity.Calculator"
+            android:label="@string/calculator" />
+
+        <activity
+            android:name=".activity.TicTacToeActivity"
+            android:label="@string/tic_tac_toe" />
+
+        <activity
+            android:name=".activity.FindMyAgeActivity"
+            android:label="@string/find_my_age" />
+
         <activity android:name=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
