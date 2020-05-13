@@ -22,15 +22,24 @@ import com.kg.kotlincollection.Pokemon
 import com.kg.kotlincollection.R
 
 class PokemonActivity : AppCompatActivity(), OnMapReadyCallback {
+    //Bangalore location coordinates: (lat=13.0032, long=77.6664)
+    //Patna location coordinates: (lat=25.5327, long=85.2413)
+    //Delhi location coordinates: (lat=28.5064, long=77.2249)
+    //Mumbai location coordinates: (lat=18.9601, long=72.9382)
 
     private lateinit var mMap: GoogleMap
     private var accessLocationCode = 123
     private var location: Location? = null
     private var pokemonList = mutableListOf<Pokemon>()
     private var oldLocation: Location? = null
-    val charmanderLocation = Pair(13.1000, 77.5413)
+    private var playerPower: Double = 0.0
+   /* val charmanderLocation = Pair(13.1000, 77.5413)
     val bulbasaurLocation = Pair(12.7064, 77.7000)
-    val squirtleLocation = Pair(13.2019, 77.7582)
+    val squirtleLocation = Pair(13.2019, 77.7582)*/
+   val charmanderLocation = Pair(25.5327, 85.2413)
+    val bulbasaurLocation = Pair(28.5064, 77.2249)
+    val squirtleLocation = Pair(18.9601, 72.9382)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -139,14 +148,23 @@ class PokemonActivity : AppCompatActivity(), OnMapReadyCallback {
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 10f))
 
                         // Show Pokemons
-                        for (pokemon in pokemonList) {
+                        for (i in 0..pokemonList.size-1) {
+                            var pokemon = pokemonList[i]
                             if(!pokemon.isCatch) {
-                                val pokemonLoc = LatLng(pokemon.lat!!, pokemon.long!!)
+                                val pokemonLoc = LatLng(pokemon.location!!.latitude, pokemon.location!!.longitude)
                                 mMap.addMarker(MarkerOptions()
                                     .position(pokemonLoc)
                                     .title(pokemon.name)
-                                    .snippet(pokemon.des)
+                                    .snippet(pokemon.des + ", power: "+pokemon.power)
                                     .icon(BitmapDescriptorFactory.fromResource(pokemon.image!!)))
+                            }
+
+                            if(location!!.distanceTo(pokemon.location) < 10000) {
+                                pokemon.isCatch = true
+                                pokemonList[i] = pokemon
+                                playerPower += pokemon.power!!
+                                Toast.makeText(applicationContext, "You caught a new pokemon ${pokemon.name}, your new power is: $playerPower",
+                                    Toast.LENGTH_LONG).show()
                             }
                         }
                     }
@@ -159,13 +177,7 @@ class PokemonActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun loadPokemons() {
-
-        //Bangalore location coordinates: (lat=13.0032, long=77.6664)
-        //Patna location coordinates: (lat=25.5327, long=77.2413)
-        //Delhi location coordinates: (lat=28.5064, long=77.2249)
-        //Mumbai location coordinates: (lat=18.9601, long=72.9382)
-        pokemonList.add(
-            Pokemon("Charmander", "Charmander living in Patna", R.drawable.charmander,
+        pokemonList.add(Pokemon("Charmander", "Charmander living in Patna", R.drawable.charmander,
             55.0, charmanderLocation.first, charmanderLocation.second))
         pokemonList.add(Pokemon("Bulbasaur", "Bulbasaur living in Delhi", R.drawable.bulbasaur,
             90.0, bulbasaurLocation.first, bulbasaurLocation.second))
