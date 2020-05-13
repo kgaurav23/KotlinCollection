@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.kg.kotlincollection.R
 import kotlinx.android.synthetic.main.activity_calculator.*
 
-class Calculator : AppCompatActivity() {
+class CalculatorActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

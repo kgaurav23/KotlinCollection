@@ -28,6 +28,10 @@
     <string name="cal_plus">+</string>
     <string name="cal_equals">=</string>
     <string name="cal_dot">.</string>
+    <string name="pokemon">Pokemon</string>
+    <string name="zoo">Zoo</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="title_activity_pokemon">Pokemon</string>
 
 
 </resources>

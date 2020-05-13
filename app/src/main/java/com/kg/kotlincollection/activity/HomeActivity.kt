@@ -11,6 +11,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var btnFindMyAge: Button
     private lateinit var btnTicTacToe: Button
     private lateinit var btnCalculator: Button
+    private lateinit var btnPokemon: Button
+    private lateinit var btnZoo: Button
+    private lateinit var btnRestaurant: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +24,29 @@ class HomeActivity : AppCompatActivity() {
         setupClickListenerForFindMyAge()
         setupClickListenerForTicTacToe()
         setupClickListenerForCalculator()
+        setupClickListenerForPokemon()
+        setupClickListenerForZoo()
+        setupClickListenerForRestaurant()
+    }
+
+    private fun setupClickListenerForRestaurant() {
+
+    }
+
+    private fun setupClickListenerForZoo() {
+
+    }
+
+    private fun setupClickListenerForPokemon() {
+        btnPokemon.setOnClickListener {
+            val intent = Intent(this, PokemonActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupClickListenerForCalculator() {
         btnCalculator.setOnClickListener {
-            val intent = Intent(this, Calculator::class.java)
+            val intent = Intent(this, CalculatorActivity::class.java)
             startActivity(intent)
         }
     }
@@ -48,5 +69,8 @@ class HomeActivity : AppCompatActivity() {
         btnFindMyAge = findViewById(R.id.btn_find_my_age)
         btnTicTacToe = findViewById(R.id.btn_tic_tac_toe)
         btnCalculator = findViewById(R.id.btn_calculator)
+        btnPokemon = findViewById(R.id.btn_pokemon)
+        btnZoo = findViewById(R.id.btn_zoo)
+        btnRestaurant = findViewById(R.id.btn_restaurant)
     }
 }

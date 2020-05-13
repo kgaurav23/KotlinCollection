@@ -39,6 +39,33 @@
             android:layout_marginBottom="@dimen/large_margin"
             android:text="@string/calculator"
             android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_pokemon"
+            style="@style/Widget.AppCompat.Button.Colored.WithBlackTextColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:text="@string/pokemon"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_zoo"
+            style="@style/Widget.AppCompat.Button.Colored.WithBlackTextColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:text="@string/zoo"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btn_restaurant"
+            style="@style/Widget.AppCompat.Button.Colored.WithBlackTextColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/large_margin"
+            android:text="@string/restaurant"
+            android:textColor="@android:color/black" />
     </LinearLayout>
 
 
